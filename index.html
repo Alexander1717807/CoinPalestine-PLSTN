@@ -5,12 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CoinPalestine ($PLSTN)</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #0b0b0b;
-      color: #d1d5db;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #d1d5db;
+      overflow-x: hidden;
+      background: radial-gradient(circle at center, #0a0a0a 0%, #050505 100%);
+      position: relative;
+    }
+
+    /* === Background Animation === */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+      background: linear-gradient(180deg, #000000 0%, #030a12 100%);
+    }
+    .background::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 183, 255, 0.1) 0px,
+        rgba(0, 183, 255, 0.1) 2px,
+        transparent 2px,
+        transparent 40px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        rgba(0, 183, 255, 0.1) 0px,
+        rgba(0, 183, 255, 0.1) 2px,
+        transparent 2px,
+        transparent 40px
+      );
+      animation: moveGrid 30s linear infinite;
+      transform: rotate(1deg);
+    }
+    @keyframes moveGrid {
+      from { transform: translate(0, 0) rotate(1deg); }
+      to { transform: translate(-40px, -40px) rotate(1deg); }
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -19,25 +67,31 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .logo-area {
       display: flex;
       align-items: center;
       gap: 15px;
     }
+
     .logo-area img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
       border: 2px solid #00b7ff;
+      box-shadow: 0 0 20px #00b7ff66;
     }
+
     .brand h1 {
       margin: 0;
       color: white;
       font-size: 1.4rem;
     }
+
     .brand span {
       color: #00b7ff;
     }
+
     nav a {
       color: #00b7ff;
       text-decoration: none;
@@ -45,30 +99,36 @@
       padding: 8px 16px;
       border-radius: 6px;
       margin-left: 10px;
-      transition: background 0.3s;
+      transition: background 0.3s, box-shadow 0.3s;
     }
+
     nav a:hover {
       background-color: #00b7ff33;
+      box-shadow: 0 0 10px #00b7ff;
     }
+
     main {
       max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
       text-align: center;
     }
+
     .coin-img {
       width: 220px;
       height: 220px;
       margin: 30px auto;
       border-radius: 50%;
-      box-shadow: 0 0 40px #00b7ff55;
+      box-shadow: 0 0 40px #00b7ff99;
       border: 1px solid #00b7ff66;
       object-fit: cover;
     }
+
     h2 {
       color: white;
       font-size: 2.2rem;
     }
+
     .tokenomics, .about, .community {
       background: #11151a;
       border: 1px solid #00b7ff22;
@@ -77,19 +137,79 @@
       margin: 30px auto;
       max-width: 800px;
       text-align: left;
+      box-shadow: 0 0 10px #00b7ff11;
     }
+
     .tokenomics h3, .about h3, .community h3 {
       color: #00b7ff;
     }
+
+    /* === Social Section === */
+    .social-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      background: #11151a;
+      border: 1px solid #00b7ff22;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00b7ff22;
+    }
+
+    .social-section h3 {
+      color: #00b7ff;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .social-card {
+      background: #0f1419;
+      border: 1px solid #00b7ff33;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s;
+      width: 100%;
+    }
+
+    .social-card:hover {
+      background: #00b7ff11;
+      box-shadow: 0 0 20px #00b7ff66;
+      transform: translateY(-5px);
+    }
+
+    .social-card img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .social-card a {
+      color: #00b7ff;
+      text-decoration: none;
+      font-weight: 500;
+      display: block;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       font-size: 0.9rem;
       color: #9ca3af;
     }
+
   </style>
 </head>
 <body>
+  <div class="background"></div>
+
   <header>
     <div class="logo-area">
       <img src="logo.png" alt="CoinPalestine Logo" />
@@ -100,14 +220,14 @@
     </div>
     <nav>
       <a href="https://t.me/coin_Palestine" target="_blank">Telegram</a> 
-      <a href="https://x.com/coin_Palestine1?t=Rwf5YonWx3xKS7prCYs_Aw&s=09" target="_blank">X / Twitter</a>
+      <a href="https://x.com/coin_Palestine1" target="_blank">X / Twitter</a>
     </nav>
   </header>
 
   <main>
     <img src="logo.png" class="coin-img" alt="PLSTN Coin" />
     <h2>CoinPalestine <span style="color:#00b7ff">($PLSTN)</span></h2>
-    <p>The official account of Palestinecoin ($PLSTN) — a digital token on <strong style="color:#00b7ff">#Polygon</strong> symbolizing freedom, unity, and innovation. Powered by people. 💫</p>
+    <p>The official token of Palestine — built on <strong style="color:#00b7ff">#Polygon</strong> for freedom, unity, and innovation. Powered by people. 💫</p>
 
     <div class="tokenomics">
       <h3>Tokenomics</h3>
@@ -126,9 +246,35 @@
       <p>CoinPalestine ($PLSTN) represents solidarity, freedom, and community-driven innovation. Built on Polygon for low fees and fast settlement, PLSTN aims to empower contributors and supporters worldwide.</p>
     </div>
 
-    <div class="community">
-      <h3>Community</h3>
-      <p>Join the official Telegram to discuss updates, governance, and community events. Follow us on X for announcements and key milestones.</p>
+    <!-- === Social Links Section === -->
+    <div class="social-section">
+      <h3>Join Our Community</h3>
+      <div class="social-grid">
+        <div class="social-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+          <a href="https://t.me/coin_Palestine" target="_blank">Telegram</a>
+        </div>
+        <div class="social-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+          <a href="https://x.com/coin_Palestine1" target="_blank">X / Twitter</a>
+        </div>
+        <div class="social-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord">
+          <a href="https://discord.gg/H9NPdQQJ2" target="_blank">Discord</a>
+        </div>
+        <div class="social-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
+          <a href="https://www.instagram.com/coin_palestine1" target="_blank">Instagram</a>
+        </div>
+        <div class="social-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Website">
+          <a href="https://alexander1717807.github.io/CoinPalestine-PLSTN/" target="_blank">Official Website</a>
+        </div>
+        <div class="social-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+          <a href="mailto:coinpalestine.team@gmail.com">coinpalestine.team@gmail.com</a>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -137,4 +283,4 @@
     <p>Made with ❤️ • Built for the people.</p>
   </footer>
 </body>
-</html>
+      </html>
