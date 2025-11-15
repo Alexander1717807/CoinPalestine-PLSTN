@@ -1,342 +1,178 @@
 <!doctype html>
-
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>CoinPalestine ($PLSTN)</title>
-  <meta name="description" content="CoinPalestine ($PLSTN) — community-driven token on Polygon. Whitepaper, tokenomics, roadmap, and official links." />
-  <meta name="theme-color" content="#0b1220" />  <!-- Open Graph -->  <meta property="og:title" content="CoinPalestine ($PLSTN)" />
-  <meta property="og:description" content="CoinPalestine ($PLSTN) — community-driven token on Polygon. Learn about tokenomics, roadmap, and join the community." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alexander1717807.github.io/CoinPalestine-PLSTN/" />  <!-- Single-file styles + scripts for easy copy/paste -->  <style>
-    :root{
-      --bg:#0b1220; /* dark default */
-      --card:#0f1724;
-      --muted:#98a0b3;
-      --accent:#00d1ff;
-      --accent-2:#7c3aed;
-      --text:#eef2ff;
-      --glass: rgba(255,255,255,0.03);
-      --radius:14px;
-      --maxw:1100px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    }
-    /* Light theme variables (applied via .light on body) */
-    body.light{ --bg:#f7fbff; --card:#ffffff; --muted:#6b7280; --accent:#0077cc; --accent-2:#6b21a8; --text:#0b1220; --glass: rgba(11,17,32,0.02); }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoinPalestine ($PLSTN)</title>
+<meta name="description" content="CoinPalestine ($PLSTN) — community-driven token on Polygon. Whitepaper, tokenomics, roadmap, and official links.">
+<meta name="theme-color" content="#0b1220">
 
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg), #061018 90%);color:var(--text);-webkit-font-smoothing:antialiased}
-    a{color:inherit}
+<style>
+:root {
+  --bg:#0b1220; --card:#0f1724; --text:#eef2ff; --muted:#98a0b3;
+  --accent:#00d1ff; --accent-2:#7c3aed; --glass: rgba(255,255,255,0.03);
+  --radius:14px; --maxw:1100px; font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
 
-    .container{max-width:var(--maxw);margin:0 auto;padding:20px}
+body.light{--bg:#f7fbff;--card:#ffffff;--text:#0b1220;--muted:#6b7280;--accent:#0077cc;--accent-2:#6b21a8;--glass: rgba(11,17,32,0.02);}
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;transition:background 0.3s,color 0.3s;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:var(--maxw);margin:0 auto;padding:20px;position:relative;}
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:64px;height:64px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.06);background:linear-gradient(135deg,var(--accent),var(--accent-2))}
-    .brand h1{margin:0;font-size:1.15rem}
-    .brand p{margin:0;font-size:0.78rem;color:var(--muted)}
+/* Background animation */
+body::before{
+  content:"";position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;
+  background:linear-gradient(120deg, #0b1220, #061018, #0f1724, #061018);
+  background-size:400% 400%;animation:bgShift 20s ease infinite;
+}
+@keyframes bgShift{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
 
-    nav.desktop{display:flex;align-items:center;gap:8px}
-    nav.desktop a{padding:8px 12px;border-radius:10px;font-weight:600;font-size:0.95rem;border:1px solid transparent}
-    nav.desktop a.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04)}
-    nav.desktop a.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff}
+/* Header */
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0;}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer;}
+.brand img{width:64px;height:64px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.06);background:linear-gradient(135deg,var(--accent),var(--accent-2));transition: transform 0.5s;}
+.brand:hover img{transform:scale(1.05) rotate(-2deg);}
+.brand h1{margin:0;font-size:1.2rem;}
+.brand p{margin:0;font-size:0.85rem;color:var(--muted);}
 
-    /* header controls */
-    .controls{display:flex;align-items:center;gap:8px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-weight:700}
-    .btn.icon{padding:8px}
-    .btn.small{padding:6px 10px;font-weight:600}
+nav.desktop{display:flex;align-items:center;gap:8px;}
+nav.desktop a{padding:8px 14px;border-radius:10px;font-weight:600;font-size:0.95rem;border:1px solid transparent;transition:all 0.3s;}
+nav.desktop a.ghost:hover{background:rgba(255,255,255,0.05);}
+nav.desktop a.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;transition:background 0.4s;}
+nav.desktop a.cta:hover{background-position:right;transform:scale(1.05);}
 
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;margin-top:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04)}
-    .hero h2{margin:0;font-size:1.6rem}
-    .lead{margin-top:8px;color:var(--muted);line-height:1.5}
+.controls{display:flex;align-items:center;gap:8px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-weight:700;transition:all 0.3s;}
+.btn:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 10px 25px rgba(0,0,0,0.35);}
+.btn.icon{padding:8px;}
+.btn.small{padding:6px 10px;font-weight:600;}
 
-    .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-    .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:10px;font-weight:600;border:1px solid rgba(255,255,255,0.03)}
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 380px;gap:20px;align-items:start;margin-top:18px;}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:22px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04);transition:transform 0.3s,box-shadow 0.3s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,0.4);}
+.hero h2{margin:0;font-size:1.8rem;opacity:0;animation:fadeInUp 1s forwards;}
+.lead{margin-top:10px;color:var(--muted);line-height:1.6;opacity:0;animation:fadeInUp 1.3s forwards;}
+.actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+.chip{background:rgba(255,255,255,0.02);padding:8px 12px;border-radius:10px;font-weight:600;border:1px solid rgba(255,255,255,0.03);}
 
-    /* right column */
-    .overview{display:flex;flex-direction:column;gap:12px}
-    .stat{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-    .stat .label{color:var(--muted);font-size:0.9rem}
-    .stat .value{font-weight:800}
+/* Overview */
+.overview{display:flex;flex-direction:column;gap:14px;}
+.stat{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);}
+.stat .label{color:var(--muted);font-size:0.95rem;}
+.stat .value{font-weight:800;}
 
-    /* sections */
-    main{margin-top:20px}
-    section{margin:18px 0}
-    h3{color:var(--accent);margin:0 0 10px 0}
-    .two-col{display:grid;grid-template-columns:1fr 380px;gap:18px}
-    .tokenomics table{width:100%;border-collapse:collapse}
-    .tokenomics th,.tokenomics td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:right}
+/* iframe embed */
+.embed-card{height:650px;overflow:hidden;border-radius:14px;border:1px solid rgba(255,255,255,0.04);transition:transform 0.3s,box-shadow 0.3s;}
+.embed-card:hover{transform:scale(1.03);box-shadow:0 15px 40px rgba(0,0,0,0.5);}
+.embed-card iframe{width:100%;height:100%;border:0;}
 
-    /* iframe container */
-    .embed-card{height:650px;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
-    .embed-card iframe{width:100%;height:100%;border:0}
+/* Sections */
+main{margin-top:22px;}
+section{margin:20px 0;}
+h3{color:var(--accent);margin:0 0 10px 0;}
+.two-col{display:grid;grid-template-columns:1fr 380px;gap:20px;}
+.tokenomics table{width:100%;border-collapse:collapse;}
+.tokenomics th,.tokenomics td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:right;}
 
-    /* roadmap */
-    .roadmap{display:flex;flex-direction:column;gap:10px}
-    .step{display:flex;gap:12px;align-items:flex-start}
-    .step .dot{width:14px;height:14px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-top:6px}
-    .step p{margin:0}
+/* Roadmap */
+.roadmap{display:flex;flex-direction:column;gap:12px;}
+.step{display:flex;gap:12px;align-items:flex-start;}
+.step .dot{width:16px;height:16px;border-radius:50%;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-top:6px;}
+.step p{margin:0;opacity:0;animation:fadeInUp 1.5s forwards;}
 
-    /* footer */
-    footer{margin:28px 0;padding:18px;border-radius:12px;text-align:center;color:var(--muted)}
+/* Footer */
+footer{margin:28px 0;padding:18px;border-radius:12px;text-align:center;color:var(--muted);}
+.socials{display:flex;gap:8px;flex-wrap:wrap;}
 
-    /* mobile */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .two-col{grid-template-columns:1fr}
-      nav.desktop{display:none}
-      header{padding:8px 0}
-    }
+/* Animations */
+@keyframes fadeInUp{
+  0%{opacity:0;transform:translateY(20px);}
+  100%{opacity:1;transform:translateY(0);}
+}
 
-    /* small helpers */
-    .muted{color:var(--muted)}
-    .copy{cursor:pointer}
-    .socials{display:flex;gap:8px;flex-wrap:wrap}
+/* Floating text effect */
+.float-text{display:inline-block;animation:floaty 4s ease-in-out infinite;}
+@keyframes floaty{0%{transform:translateY(0);}50%{transform:translateY(-6px);}100%{transform:translateY(0);}}
 
-    /* menu */
-    .hamb{display:none}
-    @media (max-width:980px){.hamb{display:inline-flex}}
+@media(max-width:980px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr;}nav.desktop{display:none;}header{padding:8px 0;}}
+</style>
+</head>
 
-    /* subtle animation */
-    .float{animation:floaty 6s ease-in-out infinite}
-    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
-
-  </style></head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <img src="logo.png" alt="PLSTN logo" id="siteLogo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"256\" height=\"256\"><rect width=\"100%\" height=\"100%\" fill=\"%23000\"/><text x=\"50%\" y=\"50%\" fill=\"%23fff\" font-size=\"36\" font-family=\"Arial\" dominant-baseline=\"middle\" text-anchor=\"middle\">PLSTN</text></svg>'">
-        <div>
-          <h1>CoinPalestine <span style="color:var(--accent)">($PLSTN)</span></h1>
-          <p>Freedom • Unity • Innovation</p>
-        </div>
-      </div><nav class="desktop" role="navigation">
-    <a href="#home" class="ghost">الصفحة الرئيسية</a>
-    <a href="#tokenomics" class="ghost">التوكنوميكس</a>
-    <a href="#market" class="ghost">التداول</a>
-    <a href="#roadmap" class="ghost">خريطة الطريق</a>
-    <a href="#community" class="ghost">المجتمع</a>
-    <a class="cta" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank" rel="noopener">تداول الآن</a>
+<div class="container">
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="PLSTN logo" id="siteLogo">
+    <div>
+      <h1>CoinPalestine <span style="color:var(--accent)" class="float-text">($PLSTN)</span></h1>
+      <p class="float-text">Freedom • Unity • Innovation</p>
+    </div>
+  </div>
+  <nav class="desktop">
+    <a href="#home" class="ghost">Home</a>
+    <a href="#tokenomics" class="ghost">Tokenomics</a>
+    <a href="#market" class="ghost">Market</a>
+    <a href="#roadmap" class="ghost">Roadmap</a>
+    <a href="#community" class="ghost">Community</a>
+    <a class="cta" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">Trade Now</a>
   </nav>
-
   <div class="controls">
-    <button class="btn icon" id="copyContract" title="نسخ عنوان العقد">نسخ العقد</button>
-    <button class="btn small" id="themeToggle" title="تبديل الوضع">وضع</button>
-    <button class="btn small hamb" id="openMenu" aria-label="قائمة">قائمة</button>
+    <button class="btn icon" id="copyContract">Copy Contract</button>
+    <button class="btn small" id="themeToggle">Dark</button>
   </div>
 </header>
 
-<!-- MOBILE MENU (simple) -->
-<div id="mobileMenu" style="display:none;margin-top:10px" class="card">
-  <div style="display:flex;flex-direction:column;gap:8px">
-    <a href="#home">الصفحة الرئيسية</a>
-    <a href="#tokenomics">التوكنوميكس</a>
-    <a href="#market">التداول</a>
-    <a href="#roadmap">خريطة الطريق</a>
-    <a href="#community">المجتمع</a>
-  </div>
-</div>
-
-<!-- HERO -->
 <section id="home" class="hero">
   <div class="card">
-    <h2>مرحباً بكم في CoinPalestine <small style="font-size:0.9rem;color:var(--muted)">— PLSTN</small></h2>
-    <p class="lead">رمز رقمي مجتمعي على شبكة Polygon — الشفافية، الاستدامة، والتأثير الاجتماعي. هنا ستجد كل الروابط الرسمية، الورقة البيضاء، وبيانات السوق الحية.</p>
-
+    <h2 class="float-text">Welcome to CoinPalestine <small style="font-size:0.9rem;color:var(--muted)">— PLSTN</small></h2>
+    <p class="lead float-text">A community-driven token on Polygon. Transparency, sustainability, and social impact. Official links, whitepaper, and live market data below.</p>
     <div class="actions">
-      <a class="btn" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">تداول على Uniswap</a>
-      <a class="btn" href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">عرض على PolygonScan</a>
-      <a class="btn" href="https://www.dextools.io/app/en/polygon" target="_blank">عرض على DEXTools</a>
-      <a class="btn" href="#gecko">عرض GeckoTerminal</a>
-      <a class="btn" href="https://raw.githubusercontent.com/Alexander1717807/CoinPalestine-PLSTN/main/CoinPalestine_Whitepaper.pdf" target="_blank">تحميل الورقة البيضاء (PDF)</a>
+      <a class="btn" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">Trade on Uniswap</a>
+      <a class="btn" href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">PolygonScan</a>
+      <a class="btn" href="https://www.dextools.io/app/en/polygon" target="_blank">DEXTools</a>
+      <a class="btn" href="#gecko">GeckoTerminal</a>
+      <a class="btn" href="https://raw.githubusercontent.com/Alexander1717807/CoinPalestine-PLSTN/main/CoinPalestine_Whitepaper.pdf" target="_blank">Whitepaper PDF</a>
     </div>
-
-    <p style="margin-top:12px" class="muted">عنوان العقد: <strong id="contractAddress">0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2</strong></p>
-
-    <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-      <div class="chip">سعر: <strong id="price">—</strong></div>
-      <div class="chip">قيمة سوقية (FDV): <strong id="fdv">—</strong></div>
-      <div class="chip">حجم 24س: <strong id="vol">—</strong></div>
-    </div>
-
-    <p class="small" style="margin-top:10px;color:var(--muted)">ملاحظة: بيانات الأسعار من مزودي بيانات DEX وقد تتأخر قليلاً.</p>
+    <p style="margin-top:12px" class="muted">Contract Address: <strong id="contractAddress">0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2</strong></p>
   </div>
 
-  <!-- right column overview -->
   <aside class="overview">
     <div class="card stat">
-      <div>
-        <div class="label">إجمالي العرض</div>
-        <div class="value">2,000,000,000 PLSTN</div>
-      </div>
+      <div><div class="label">Total Supply</div><div class="value">2,000,000,000 PLSTN</div></div>
     </div>
     <div class="card stat">
-      <div>
-        <div class="label">التداول النشط</div>
-        <div class="value">1,000,000,000 PLSTN</div>
-      </div>
+      <div><div class="label">Active Circulation</div><div class="value">1,000,000,000 PLSTN</div></div>
     </div>
     <div class="card embed-card">
-      <!-- GeckoTerminal embedded iframe -->
       <iframe src="https://geckoterminal.com/polygon_pos/pools/0xea58286688e13b8c43094903b1ec6d728dbf963b6fd4b5cd80590f5db5065a4b?embed=1" loading="lazy" title="GeckoTerminal - PLSTN Pool"></iframe>
     </div>
   </aside>
 </section>
 
-<main>
-  <!-- About -->
-  <section class="card" id="about">
-    <h3>عن المشروع</h3>
-    <p>CoinPalestine ($PLSTN) هو توكن مجتمعي مبني على Polygon. يهدف المشروع إلى تمكين المجتمع، دعم المشاريع الاجتماعية، وتوفير شفافية كاملة عبر السلسلة.</p>
-  </section>
-
-  <!-- tokenomics -->
-  <section class="card tokenomics" id="tokenomics">
-    <h3>التوكنوميكس</h3>
-    <div class="two-col">
-      <div>
-        <p><strong>التوكن:</strong> CoinPalestine (PLSTN)</p>
-        <p><strong>السلسلة:</strong> Polygon (MATIC) — معيار ERC-20</p>
-        <p><strong>إجمالي العرض:</strong> 2,000,000,000 PLSTN</p>
-        <p><strong>العرض المتداول:</strong> 1,000,000,000 PLSTN</p>
-        <p><strong>الاحتياطي المحجوز:</strong> 1,000,000,000 PLSTN</p>
-
-        <div style="margin-top:12px" class="note">ملاحظة الشفافية: العقد موثّق على PolygonScan ويمكن لأي شخص التحقق من التوزيعات والقيود.</div>
-      </div>
-
-      <aside class="card">
-        <h4 style="margin-top:0">التوزيع</h4>
-        <table>
-          <thead>
-            <tr><th style="text-align:right">الفئة</th><th style="text-align:left">النسبة</th></tr>
-          </thead>
-          <tbody>
-            <tr><td style="text-align:right">البيع العام و السيولة</td><td style="text-align:left">40% (800,000,000)</td></tr>
-            <tr><td style="text-align:right">النظام البيئي والمكافآت</td><td style="text-align:left">25% (500,000,000)</td></tr>
-            <tr><td style="text-align:right">التطوير والعمليات</td><td style="text-align:left">15% (300,000,000)</td></tr>
-            <tr><td style="text-align:right">التسويق والشراكات</td><td style="text-align:left">10% (200,000,000)</td></tr>
-            <tr><td style="text-align:right">الفريق والمستشارون (مقفل)</td><td style="text-align:left">10% (200,000,000)</td></tr>
-          </tbody>
-        </table>
-        <p class="small muted" style="margin-top:8px">ملاحظة: تخصيصات الفريق مقفلة للتحقق.</p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- market -->
-  <section class="card" id="market">
-    <h3>التداول والسيولة</h3>
-    <p>روابط سريعة لصفحات التداول والتحليل:</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-      <a class="btn" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">Uniswap</a>
-      <a class="btn" href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">PolygonScan</a>
-      <a class="btn" href="https://www.dextools.io/app/en/polygon" target="_blank">DEXTools</a>
-      <a class="btn" href="https://geckoterminal.com/polygon_pos/pools/0xea58286688e13b8c43094903b1ec6d728dbf963b6fd4b5cd80590f5db5065a4b" target="_blank">GeckoTerminal</a>
-    </div>
-
-    <div style="margin-top:14px">
-      <div class="card">
-        <h4 style="margin:0 0 8px 0">Pair Analytics (GeckoTerminal)</h4>
-        <p class="muted" style="margin:0 0 8px 0">إطار مدمج يعرض الشارت، السيولة، والتفاصيل الخاصة بمجمع السيولة.</p>
-        <div class="embed-card" style="height:420px;margin-top:10px">
-          <iframe src="https://geckoterminal.com/polygon_pos/pools/0xea58286688e13b8c43094903b1ec6d728dbf963b6fd4b5cd80590f5db5065a4b?embed=1" loading="lazy" title="GeckoTerminal embed"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- roadmap -->
-  <section class="card" id="roadmap">
-    <h3>خريطة الطريق</h3>
-    <div class="roadmap">
-      <div class="step"><div class="dot"></div><div><strong>المرحلة 1 — الإطلاق</strong><p class="muted">نشر العقد، إطلاق الموقع، إصدار الورقة البيضاء، انطلاق المجتمع.</p></div></div>
-      <div class="step"><div class="dot"></div><div><strong>المرحلة 2 — النمو</strong><p class="muted">حملات تسويق، إدراجات، برامج مكافآت، ومرحلة تجريب الستاكينغ.</p></div></div>
-      <div class="step"><div class="dot"></div><div><strong>المرحلة 3 — الاستخدام</strong><p class="muted">تكامل NFT، حلول دفع، ومحفظة بيتا.</p></div></div>
-      <div class="step"><div class="dot"></div><div><strong>المرحلة 4 — الحوكمة</strong><p class="muted">إطلاق DAO، توسيع عبر السلاسل، شراكات عالمية.</p></div></div>
-    </div>
-  </section>
-
-  <!-- community -->
-  <section class="card" id="community">
-    <h3>المجتمع وطرق التواصل</h3>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px" class="socials">
-      <a class="btn" href="https://t.me/coin_Palestine" target="_blank">Telegram</a>
-      <a class="btn" href="https://x.com/coin_Palestine1" target="_blank">X (Twitter)</a>
-      <a class="btn" href="http://instagram.com/coin_palestine1" target="_blank">Instagram</a>
-      <a class="btn" href="https://discord.gg/H9NPdQQJ2" target="_blank">Discord</a>
-      <a class="btn" href="https://github.com/Alexander1717807/CoinPalestine-PLSTN" target="_blank">GitHub</a>
-    </div>
-    <div style="margin-top:12px">
-      <p><strong>البريد الرسمي:</strong> <a href="mailto:coinpalestine.team@gmail.com">coinpalestine.team@gmail.com</a></p>
-    </div>
-  </section>
-
-</main>
-
 <footer>
-  <div>© 2025 CoinPalestine — جميع الحقوق محفوظة.</div>
-  <div style="margin-top:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
-    <a href="https://raw.githubusercontent.com/Alexander1717807/CoinPalestine-PLSTN/main/CoinPalestine_Whitepaper.pdf" class="muted">الورقة البيضاء</a>
-    <a href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" class="muted">PolygonScan</a>
-    <a href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" class="muted">Uniswap</a>
-  </div>
+  <div>© 2025 CoinPalestine — All rights reserved.</div>
 </footer>
+</div>
 
-  </div>  <script>
-    // Basic interactivity: copy address, theme toggle, mobile menu
-    const contract = '0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2';
-    document.getElementById('copyContract').addEventListener('click', async ()=>{
-      try{
-        await navigator.clipboard.writeText(contract);
-        const btn = document.getElementById('copyContract');
-        btn.textContent = 'تم النسخ ✓';
-        setTimeout(()=>btn.textContent = 'نسخ العقد', 2500);
-      }catch(e){
-        alert('فشل النسخ — انسخ يدوياً: ' + contract);
-      }
-    });
+<script>
+// Copy contract
+const contract='0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2';
+document.getElementById('copyContract').addEventListener('click', async()=>{
+  try{await navigator.clipboard.writeText(contract);alert('Contract copied!');}catch(e){alert('Copy failed: '+contract);}
+});
 
-    // Theme toggle (light/dark)
-    const themeBtn = document.getElementById('themeToggle');
-    const body = document.body;
-    // default: dark. allow persisted pref
-    if(localStorage.getItem('plstn_theme') === 'light') body.classList.add('light');
-    updateThemeBtn();
-    themeBtn.addEventListener('click', ()=>{
-      body.classList.toggle('light');
-      localStorage.setItem('plstn_theme', body.classList.contains('light')? 'light' : 'dark');
-      updateThemeBtn();
-    });
-    function updateThemeBtn(){ themeBtn.textContent = body.classList.contains('light')? 'فاتح' : 'داكن'; }
-
-    // Mobile menu
-    const openMenu = document.getElementById('openMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    openMenu.addEventListener('click', ()=>{ mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none'; });
-
-    // Try to fetch price info from a public CORS-friendly source (fallback safe)
-    async function fetchPrice(){
-      try{
-        // try CoinGecko simple price (symbol mapping needed) — this is a best-effort; may fail due to CORS if not proxied
-        // Fallback: show dash
-        // We'll attempt a quick fetch to show something (not critical)
-        const priceEl = document.getElementById('price');
-        const volEl = document.getElementById('vol');
-        const fdvEl = document.getElementById('fdv');
-        // If you have a backend or API key, replace below with your provider
-        priceEl.textContent = '—'; volEl.textContent = '—'; fdvEl.textContent = '—';
-      }catch(e){
-        console.warn('price fetch failed', e);
-      }
-    }
-    fetchPrice();
-
-    // Accessibility helpers: focus outlines, keyboard escape to hide mobile menu
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') mobileMenu.style.display = 'none'; });
-  </script></body>
-  </html>
+// Theme toggle
+const themeBtn=document.getElementById('themeToggle');
+themeBtn.addEventListener('click',()=>{
+  document.body.classList.toggle('light');
+  themeBtn.textContent=document.body.classList.contains('light')?'Light':'Dark';
+});
+</script>
+</body>
+</html>
