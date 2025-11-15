@@ -1,227 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<title>CoinPalestine ($PLSTN)</title>
-<meta name="description" content="CoinPalestine ($PLSTN) — community-driven token on Polygon. Whitepaper, tokenomics, roadmap, and official links." />
-<meta name="theme-color" content="#0b1220" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>CoinPalestine ($PLSTN)</title>
+  <meta name="description" content="CoinPalestine ($PLSTN) — community-driven token on Polygon. Whitepaper, tokenomics, roadmap, and official links.">
+  <meta name="theme-color" content="#0b1220">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="CoinPalestine ($PLSTN)">
+  <meta property="og:description" content="CoinPalestine ($PLSTN) — community-driven token on Polygon. Learn about tokenomics, roadmap, and join the community.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alexander1717807.github.io/CoinPalestine-PLSTN/">
 
-<style>
-:root{
-  --bg:#0b1220;
-  --card:#0f1724;
-  --muted:#98a0b3;
-  --accent:#00d1ff;
-  --accent-2:#7c3aed;
-  --text:#eef2ff;
-  --glass: rgba(255,255,255,0.03);
-  --radius:14px;
-  --maxw:1100px;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-body.light{--bg:#f7fbff;--card:#ffffff;--muted:#6b7280;--accent:#0077cc;--accent-2:#6b21a8;--text:#0b1220;--glass: rgba(11,17,32,0.02);}
-*{box-sizing:border-box;}
-html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#061018 90%);color:var(--text);-webkit-font-smoothing:antialiased;}
-a{color:inherit;text-decoration:none;}
-
-.container{max-width:var(--maxw);margin:0 auto;padding:20px;}
-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;flex-wrap:wrap;}
-.brand{display:flex;align-items:center;gap:12px;}
-.brand img{width:64px;height:64px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.06);background:linear-gradient(135deg,var(--accent),var(--accent-2));animation:floaty 6s ease-in-out infinite;}
-.brand h1{margin:0;font-size:1.15rem;}
-.brand p{margin:0;font-size:0.78rem;color:var(--muted);}
-nav.desktop{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-nav.desktop a{padding:8px 12px;border-radius:10px;font-weight:600;font-size:0.95rem;border:1px solid transparent;}
-nav.desktop a.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);}
-nav.desktop a.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;}
-.controls{display:flex;align-items:center;gap:8px;}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-weight:700;}
-.btn.icon{padding:8px;}
-.btn.small{padding:6px 10px;font-weight:600;}
-.hero{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;margin-top:18px;}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04);}
-.hero h2{margin:0;font-size:1.6rem;}
-.lead{margin-top:8px;color:var(--muted);line-height:1.5;}
-.actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
-.chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:10px;font-weight:600;}
-.overview{display:flex;flex-direction:column;gap:12px;}
-.stat{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);}
-.stat .label{color:var(--muted);font-size:0.9rem;}
-.stat .value{font-weight:800;}
-main{margin-top:20px;}
-section{margin:18px 0;}
-h3{color:var(--accent);margin:0 0 10px 0;}
-.two-col{display:grid;grid-template-columns:1fr 380px;gap:18px;}
-.tokenomics table{width:100%;border-collapse:collapse;}
-.tokenomics th,.tokenomics td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left;}
-.embed-card{height:650px;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,0.04);}
-.embed-card iframe{width:100%;height:100%;border:0;}
-.roadmap{display:flex;flex-direction:column;gap:10px;}
-.step{display:flex;gap:12px;align-items:flex-start;}
-.step .dot{width:14px;height:14px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent-2));margin-top:6px;}
-.step p{margin:0;}
-footer{margin:28px 0;padding:18px;border-radius:12px;text-align:center;color:var(--muted);}
-@media (max-width:980px){.hero{grid-template-columns:1fr;}.two-col{grid-template-columns:1fr;}nav.desktop{display:none;}header{padding:8px 0;}}
-.muted{color:var(--muted);}
-.copy{cursor:pointer;}
-.socials{display:flex;gap:8px;flex-wrap:wrap;}
-.hamb{display:none;}
-@media (max-width:980px){.hamb{display:inline-flex;}}
-@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0);}}
-.reveal{opacity:0; transform:translateY(30px); transition:all 0.8s ease-out;}
-.reveal.active{opacity:1; transform:translateY(0);}
-</style>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1724; --muted:#98a0b3; --accent:#00d1ff; --accent2:#7c3aed; --text:#eef2ff;
+      --glass:rgba(255,255,255,0.03); --radius:14px; --maxw:1100px; font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+    body.light{--bg:#f7fbff; --card:#ffffff; --muted:#6b7280; --accent:#0077cc; --accent2:#6b21a8; --text:#0b1220; --glass: rgba(11,17,32,0.02);}
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#061018 90%);color:var(--text);-webkit-font-smoothing:antialiased;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:var(--maxw);margin:0 auto;padding:20px;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brand img{width:64px;height:64px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.06);background:linear-gradient(135deg,var(--accent),var(--accent2));}
+    .brand h1{margin:0;font-size:1.15rem;}
+    .brand p{margin:0;font-size:0.78rem;color:var(--muted);}
+    nav.desktop{display:flex;align-items:center;gap:8px;}
+    nav.desktop a{padding:8px 12px;border-radius:10px;font-weight:600;font-size:0.95rem;border:1px solid transparent;}
+    nav.desktop a.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);}
+    nav.desktop a.cta{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;}
+    .controls{display:flex;align-items:center;gap:8px;}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-weight:700;}
+    .btn.icon{padding:8px;}
+    .btn.small{padding:6px 10px;font-weight:600;}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start;margin-top:18px;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:20px;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04);}
+    .hero h2{margin:0;font-size:1.6rem;}
+    .lead{margin-top:8px;color:var(--muted);line-height:1.5;}
+    .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;}
+    .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:10px;font-weight:600;border:1px solid rgba(255,255,255,0.03);}
+    .overview{display:flex;flex-direction:column;gap:12px;}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);}
+    .stat .label{color:var(--muted);font-size:0.9rem;}
+    .stat .value{font-weight:800;}
+    main{margin-top:20px;}
+    section{margin:18px 0;}
+    h3{color:var(--accent);margin:0 0 10px 0;}
+    .two-col{display:grid;grid-template-columns:1fr 380px;gap:18px;}
+    .tokenomics table{width:100%;border-collapse:collapse;}
+    .tokenomics th,.tokenomics td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left;}
+    .embed-card{height:650px;overflow:hidden;border-radius:12px;border:1px solid rgba(255,255,255,0.04);}
+    .embed-card iframe{width:100%;height:100%;border:0;}
+    .roadmap{display:flex;flex-direction:column;gap:10px;}
+    .step{display:flex;gap:12px;align-items:flex-start;}
+    .step .dot{width:14px;height:14px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin-top:6px;}
+    .step p{margin:0;}
+    footer{margin:28px 0;padding:18px;border-radius:12px;text-align:center;color:var(--muted);}
+    .socials{display:flex;gap:8px;flex-wrap:wrap;}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}nav.desktop{display:none}header{padding:8px 0}}
+  </style>
 </head>
 <body>
-<div class="container">
-
-<header>
-  <div class="brand">
-    <img src="logo.png" alt="PLSTN logo" id="siteLogo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;256&quot; height=&quot;256&quot;><rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;%23000&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; fill=&quot;%23fff&quot; font-size=&quot;36&quot; font-family=&quot;Arial&quot; dominant-baseline=&quot;middle&quot; text-anchor=&quot;middle&quot;>PLSTN</text></svg>'">
-    <div>
-      <h1>CoinPalestine <span style="color:var(--accent)">($PLSTN)</span></h1>
-      <p>Freedom • Unity • Innovation</p>
-    </div>
-  </div>
-
-  <nav class="desktop" role="navigation">
-    <a href="#home" class="ghost">Home</a>
-    <a href="#tokenomics" class="ghost">Tokenomics</a>
-    <a href="#market" class="ghost">Market</a>
-    <a href="#roadmap" class="ghost">Roadmap</a>
-    <a href="#community" class="ghost">Community</a>
-    <a class="cta" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank" rel="noopener">Trade Now</a>
-  </nav>
-
-  <div class="controls">
-    <button class="btn icon" id="copyContract" title="Copy Contract Address">Copy</button>
-    <button class="btn small" id="themeToggle" title="Toggle Theme">Theme</button>
-    <button class="btn small hamb" id="openMenu" aria-label="Menu">Menu</button>
-  </div>
-</header>
-
-<div id="mobileMenu" style="display:none;margin-top:10px" class="card">
-  <div style="display:flex;flex-direction:column;gap:8px">
-    <a href="#home">Home</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#market">Market</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#community">Community</a>
-  </div>
-</div>
-
-<section id="home" class="hero reveal">
-  <div class="card">
-    <h2>Welcome to CoinPalestine <small style="font-size:0.9rem;color:var(--muted)">— PLSTN</small></h2>
-    <p class="lead">A community-driven token on Polygon — transparency, sustainability, and social impact. Official links, whitepaper, and live market data here.</p>
-
-    <div class="actions">
-      <a class="btn" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">Trade on Uniswap</a>
-      <a class="btn" href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">View on PolygonScan</a>
-      <a class="btn" href="https://www.dextools.io/app/en/polygon" target="_blank">View on DEXTools</a>
-      <a class="btn" href="#gecko">View GeckoTerminal</a>
-      <a class="btn" href="https://raw.githubusercontent.com/Alexander1717807/CoinPalestine-PLSTN/main/CoinPalestine_Whitepaper.pdf" target="_blank">Download Whitepaper (PDF)</a>
-    </div>
-
-    <p style="margin-top:12px" class="muted">Contract: <strong id="contractAddress">0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2</strong></p>
-
-    <div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-      <div class="chip">Price: <strong id="price">—</strong></div>
-      <div class="chip">Market Cap (FDV): <strong id="fdv">—</strong></div>
-      <div class="chip">24h Volume: <strong id="vol">—</strong></div>
-    </div>
-    <p class="small" style="margin-top:10px;color:var(--muted)">Note: Prices may be slightly delayed from DEX providers.</p>
-  </div>
-
-  <aside class="overview reveal">
-    <div class="card stat">
-      <div>
-        <div class="label">Total Supply</div>
-        <div class="value">2,000,000,000 PLSTN</div>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="logo.png" alt="PLSTN logo" id="siteLogo" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'256\' height=\'256\'><rect width=\'100%\' height=\'100%\' fill=\'%23000\'/><text x=\'50%\' y=\'50%\' fill=\'%23fff\' font-size=\'36\' font-family=\'Arial\' dominant-baseline=\'middle\' text-anchor=\'middle\'>PLSTN</text></svg>'">
+        <div>
+          <h1>CoinPalestine <span style="color:var(--accent)">($PLSTN)</span></h1>
+          <p>Freedom • Unity • Innovation</p>
+        </div>
       </div>
-    </div>
-    <div class="card stat">
-      <div>
-        <div class="label">Circulating Supply</div>
-        <div class="value">1,000,000,000 PLSTN</div>
+      <nav class="desktop">
+        <a href="#home" class="ghost">Home</a>
+        <a href="#tokenomics" class="ghost">Tokenomics</a>
+        <a href="#market" class="ghost">Market</a>
+        <a href="#roadmap" class="ghost">Roadmap</a>
+        <a href="#community" class="ghost">Community</a>
+        <a class="cta" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">Trade Now</a>
+      </nav>
+      <div class="controls">
+        <button class="btn icon" id="copyContract" title="Copy Contract">Copy Contract</button>
+        <button class="btn small" id="themeToggle" title="Toggle Theme">Theme</button>
       </div>
-    </div>
-    <div class="card embed-card">
-      <iframe src="https://geckoterminal.com/polygon_pos/pools/0xea58286688e13b8c43094903b1ec6d728dbf963b6fd4b5cd80590f5db5065a4b?embed=1" loading="lazy" title="GeckoTerminal - PLSTN Pool"></iframe>
-    </div>
-  </aside>
-</section>
+    </header>
 
-<!-- Tokenomics -->
-<section class="card tokenomics reveal" id="tokenomics">
-  <h3>Tokenomics</h3>
-  <div class="two-col">
-    <div>
-      <p><strong>Token:</strong> CoinPalestine (PLSTN)</p>
-      <p><strong>Chain:</strong> Polygon (MATIC) — ERC-20</p>
-      <p><strong>Total Supply:</strong> 2,000,000,000 PLSTN</p>
-      <p><strong>Circulating Supply:</strong> 1,000,000,000 PLSTN</p>
-      <p><strong>Reserved:</strong> 1,000,000,000 PLSTN</p>
-      <div style="margin-top:12px" class="note">Transparency: Contract is verified on PolygonScan.</div>
-    </div>
-    <aside class="card">
-      <h4 style="margin-top:0">Distribution</h4>
-      <table>
-        <thead><tr><th>Category</th><th>Percentage</th></tr></thead>
-        <tbody>
-          <tr><td>Public Sale & Liquidity</td><td>40% (800,000,000)</td></tr>
-          <tr><td>Ecosystem & Rewards</td><td>25% (500,000,000)</td></tr>
-          <tr><td>Development & Operations</td><td>15% (300,000,000)</td></tr>
-          <tr><td>Marketing & Partnerships</td><td>10% (200,000,000)</td></tr>
-          <tr><td>Team & Advisors (Locked)</td><td>10% (200,000,000)</td></tr>
-        </tbody>
-      </table>
-      <p class="small muted" style="margin-top:8px">Note: Team allocation is locked.</p>
-    </aside>
-  </div>
-</section>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="card">
+        <h2>Welcome to CoinPalestine <small style="font-size:0.9rem;color:var(--muted)">— PLSTN</small></h2>
+        <p class="lead">Community-driven token on Polygon — transparency, sustainability, and social impact.</p>
+        <div class="actions">
+          <a class="btn" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">Trade on Uniswap</a>
+          <a class="btn" href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">PolygonScan</a>
+          <a class="btn" href="https://www.dextools.io/app/en/polygon" target="_blank">DEXTools</a>
+          <a class="btn" href="https://geckoterminal.com/polygon_pos/pools/0xea58286688e13b8c43094903b1ec6d728dbf963b6fd4b5cd80590f5db5065a4b" target="_blank">GeckoTerminal</a>
+          <a class="btn" href="https://raw.githubusercontent.com/Alexander1717807/CoinPalestine-PLSTN/main/CoinPalestine_Whitepaper.pdf" target="_blank">Whitepaper PDF</a>
+        </div>
+        <p style="margin-top:12px" class="muted">Contract Address: <strong id="contractAddress">0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2</strong></p>
+        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <div class="chip">Price: <strong id="price">—</strong></div>
+          <div class="chip">FDV: <strong id="fdv">—</strong></div>
+          <div class="chip">24h Volume: <strong id="vol">—</strong></div>
+        </div>
+        <p class="small" style="margin-top:10px;color:var(--muted)">Note: Price data from DEX providers, may be slightly delayed.</p>
+      </div>
+      <aside class="overview">
+        <div class="card stat"><div><div class="label">Total Supply</div><div class="value">2,000,000,000 PLSTN</div></div></div>
+        <div class="card stat"><div><div class="label">Circulating Supply</div><div class="value">1,000,000,000 PLSTN</div></div></div>
+        <div class="card embed-card"><iframe src="https://geckoterminal.com/polygon_pos/pools/0xea58286688e13b8c43094903b1ec6d728dbf963b6fd4b5cd80590f5db5065a4b?embed=1" loading="lazy" title="GeckoTerminal - PLSTN Pool"></iframe></div>
+      </aside>
+    </section>
 
-<!-- Roadmap -->
-<section class="card reveal" id="roadmap">
-  <h3>Roadmap</h3>
-  <div class="roadmap">
-    <div class="step"><div class="dot"></div><div><strong>Phase 1 — Launch</strong><p class="muted">Contract deployment, website launch, whitepaper release, community start.</p></div></div>
-    <div class="step"><div class="dot"></div><div><strong>Phase 2 — Growth</strong><p class="muted">Marketing campaigns, listings, reward programs, staking beta.</p></div></div>
-    <div class="step"><div class="dot"></div><div><strong>Phase 3 — Adoption</strong><p class="muted">NFT integration, payment solutions, beta wallet.</p></div></div>
-    <div class="step"><div class="dot"></div><div><strong>Phase 4 — Governance</strong><p class="muted">DAO launch, cross-chain expansion, global partnerships.</p></div></div>
-  </div>
-</section>
+    <!-- Main sections -->
+    <main>
+      <!-- About -->
+      <section class="card" id="about">
+        <h3>About CoinPalestine</h3>
+        <p>CoinPalestine ($PLSTN) is a community-driven token on Polygon. The project focuses on transparency, social impact, and community governance.</p>
+      </section>
 
-<!-- Community -->
-<section class="card reveal" id="community">
-  <h3>Community & Contact</h3>
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px" class="socials">
-    <a class="btn" href="https://t.me/coin_Palestine" target="_blank">Telegram</a>
-    <a class="btn" href="https://x.com/coin_Palestine1" target="_blank">X (Twitter)</a>
-    <a class="btn" href="http://instagram.com/coin_palestine1" target="_blank">Instagram</a>
-    <a class="btn" href="https://discord.gg/H9NPdQQJ2" target="_blank">Discord</a>
-    <a class="btn" href="https://github.com/Alexander1717807/CoinPalestine-PLSTN" target="_blank">GitHub</a>
-  </div>
-  <div style="margin-top:12px">
-    <p><strong>Email:</strong> <a href="mailto:coinpalestine.team@gmail.com">coinpalestine.team@gmail.com</a></p>
-  </div>
-</section>
+      <!-- Tokenomics -->
+      <section class="card tokenomics" id="tokenomics">
+        <h3>Tokenomics</h3>
+        <div class="two-col">
+          <div>
+            <p><strong>Token:</strong> CoinPalestine (PLSTN)</p>
+            <p><strong>Blockchain:</strong> Polygon (MATIC) — ERC-20</p>
+            <p><strong>Total Supply:</strong> 2,000,000,000 PLSTN</p>
+            <p><strong>Circulating Supply:</strong> 1,000,000,000 PLSTN</p>
+            <p><strong>Locked Reserve:</strong> 1,000,000,000 PLSTN</p>
+            <div style="margin-top:12px" class="note">Transparency: Smart contract is verifiable on PolygonScan.</div>
+          </div>
+          <aside class="card">
+            <h4>Distribution</h4>
+            <table>
+              <thead><tr><th>Category</th><th>Percentage</th></tr></thead>
+              <tbody>
+                <tr><td>Public Sale & Liquidity</td><td>40% (800,000,000)</td></tr>
+                <tr><td>Ecosystem & Rewards</td><td>25% (500,000,000)</td></tr>
+                <tr><td>Development & Operations</td><td>15% (300,000,000)</td></tr>
+                <tr><td>Marketing & Partnerships</td><td>10% (200,000,000)</td></tr>
+                <tr><td>Team & Advisors (Locked)</td><td>10% (200,000,000)</td></tr>
+              </tbody>
+            </table>
+          </aside>
+        </div>
+      </section>
 
-<footer>
-  <div>© 2025 CoinPalestine — All rights reserved.</div>
-  <div style="margin-top:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
-    <a href="https://raw.githubusercontent.com/Alexander1717807/CoinPalestine-PLSTN/main/CoinPalestine_Whitepaper.pdf" class="muted">Whitepaper</a>
-    <a href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" class="muted">PolygonScan</a>
-    <a href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" class="muted">Uniswap</a>
-  </div>
-</footer>
+      <!-- Market -->
+      <section class="card" id="market">
+        <h3>Market & Trading</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <a class="btn" href="https://app.uniswap.org/explore/tokens/polygon/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">Uniswap</a>
+          <a class="btn" href="https://polygonscan.com/token/0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2" target="_blank">PolygonScan</a>
+          <a class="btn" href="https://www.dextools.io/app/en/polygon" target="_blank">DEXTools</a>
+          <a class="btn" href="https://geckoterminal.com/polygon_pos/pools/0xea58286688e13b8c43094903b1ec6d728dbf963b6fd4b5cd80590f5db5065a4b" target="_blank">GeckoTerminal</a>
+        </div>
+      </section>
 
-</div>
+      <!-- Roadmap -->
+      <section class="card" id="roadmap">
+        <h3>Roadmap</h3>
+        <div class="roadmap">
+          <div class="step"><div class="dot"></div><div><strong>Phase 1 — Launch</strong><p class="muted">Smart contract deployment, website, whitepaper, initial community onboarding.</p></div></div>
+          <div class="step"><div class="dot"></div><div><strong>Phase 2 — Growth</strong><p class="muted">Marketing campaigns, listings, incentives, staking beta.</p></div></div>
+          <div class="step"><div class="dot"></div><div><strong>Phase 3 — Utility</strong><p class="muted">NFT integrations, payment solutions, wallet beta.</p></div></div>
+          <div class="step"><div class="dot"></div><div><strong>Phase 4 — Governance</strong><p class="muted">DAO launch, cross-chain expansion, global partnerships.</p></div></div>
+        </div>
+      </section>
 
-<script>
-// Copy Contract
-const contract = '0x6164917fbf20a2ab137e24bac46a8cbe418cdfa2';
-document.getElementById('copyContract').addEventListener('click', async ()=>{
-  try{
-    await navigator.clipboard.writeText
+      <!-- Community -->
+      <section class="card" id="community">
+        <h3>Community & Contact</h3>
+        <div class="socials">
+          <a class="btn" href="https://t.me/coin_Palestine" target="_blank">Telegram</a>
+          <a class="btn" href="https://x.com/coin_Palestine1" target="_blank">X (Twitter)</a>
+          <a class="btn" href="https://instagram.com/coin_palestine1" target="_blank">Instagram</a>
+          <a class="btn" href="https://discord.gg/H9NPdQQJ2" target="_blank">Discord</a>
+          <a class="btn" href="https://github.com/Alexander1717807/CoinPalestine-PLSTN" target="_blank">GitHub</a>
+        </div>
+        <div style="margin-top:12px"><p><strong>Official Email:</strong> <a href="mailto:coinpalestine.team@gmail.com">coinpalestine.team@gmail.com</a></p></div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div>© 2025 CoinPalestine — All Rights Reserved.</div>
+      <div style="margin-top
